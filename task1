@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+double getA(const double x, const double y);
+
+/**
+    * @breef  - функция подставляет значение const в уравнение.
+    * @param x-аргумент функции 
+    * @param y-аргумент функции
+*/
+
+double getB(const double x, const double y);
+
+/**
+    * @breef  - точка входа в программу
+    * @return возращает 0, если программа выполнена верно, иначе 1
+*/
+
+int main()
+{
+    const double x = 0.335, y = 0.025;
+    double a;
+    cout << "x="<< x <<"  y="<< y << endl;
+    cout << "a="<< getA(x, y) <<"  b="<< getB(x, y) << endl;
+    return 0;
+}
+
+double getA(const double x, const double y)
+{
+    return 1 + x + pow(x,2)/2 + pow(x,3)/3 + pow(x,4)/4;
+}
+
+double getB(const double x, const double y)
+{
+    return x*(sin(pow(x,3))+pow(cos(y),2));
+}
